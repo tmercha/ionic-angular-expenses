@@ -1,17 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Add New Expense</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+  <ion-content>
+    <div style="margin-top: 7%; margin-bottom: 7%;"></div>
+    <ion-content>
+      <form (submit)="onSubmit()">
+        <ion-item>
+          <div class="ion-padding">
+            <ion-label for="description">
+              Description
+            </ion-label>
+            <ion-input [(ngModel)]="description" id="description" type="text" name="description"
+              placeholder="Add Description" autocapitalize="words"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="ion-padding">
+            <ion-label for="amount">
+              Amount
+            </ion-label>
+            <ion-input [(ngModel)]="amount"  id="amount"  name="amount" type="text" inputmode="decimal"
+              placeholder="0.00" appCurrencyDecimals><span style="font-size: small; color: gray;">£ </span></ion-input>
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="ion-padding">
+            <ion-label for="amount">
+              Date
+            </ion-label>
+            <ion-input [(ngModel)]="date" id="date" type="date" name="date" placeholder="Add Date"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none">
+          <div style="padding: 5%; text-align:center;"><img [src]="temporaryPhotoDisplay" width="70%" class="center" />
+          </div>
+        </ion-item>
+        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+          <ion-button id="picturebutton" class="button" shape="round" color="light" (click)="takePicture()"><ion-icon
+              [name]="takenState ? 'camera' : 'arrow-redo-circle-outline' "></ion-icon>&nbsp; {{ takePhotoText
+            }}</ion-button>
+        </div>
+        <br>
+        <div class="ion-padding">
+          <ion-button id="submitbutton" class="button" type="submit" size="large" expand="block">&nbsp; Add
+            Expense</ion-button>
+        </div>
+      </form>
+      <div style="min-height: 20%;"></div>
+    </ion-content>
+  </ion-content>

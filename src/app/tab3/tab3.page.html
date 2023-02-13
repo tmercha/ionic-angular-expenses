@@ -1,17 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Expense Recorder
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Expense Recorder</ion-card-subtitle>
+      <ion-card-title>About This App</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      This app lets you record and save information to track your expenses.</ion-card-content><ion-card-content>
+      Click on 'New Expense' and add the required information to get started. When you take a photo of your reciept, the
+      app will
+      automatically record when the photo was taken for future reference.
+    </ion-card-content>
+    <ion-card-content>Go to 'My Expenses' to see all the expenses you have recorded. Click on each one to see more
+      details, or swipe left to delete. A running total of your expenses will be displayed at the top.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
